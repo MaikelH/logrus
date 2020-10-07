@@ -195,7 +195,8 @@ func getCaller() *runtime.Frame {
 
 	for f, again := frames.Next(); again; f, again = frames.Next() {
 		pkg := getPackageName(f.Function)
-
+		fmt.Println(pkg)
+		
 		// If the caller isn't part of this package, we're done
 		if pkg != logrusPackage {
 			return &f //nolint:scopelint
